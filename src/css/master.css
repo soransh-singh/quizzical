@@ -1,0 +1,27 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  min-height: 100vh;
+  font-family: sans-serif;
+  cursor: default;
+}
+
+button,a{
+  cursor: pointer;
+}
+
+a{
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+li{
+  
+}
