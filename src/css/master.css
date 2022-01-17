@@ -5,7 +5,7 @@
 
 body{
   min-height: 100vh;
-  font-family: sans-serif;
+  font-family: 'Karla', sans-serif;
   cursor: default;
 }
 
@@ -23,5 +23,5 @@ ul{
 }
 
 li{
-  
+
 }
