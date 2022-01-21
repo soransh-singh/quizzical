@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 // button to change the state of isStarted and fetch the quiz quiestions
 
 function Start(props){

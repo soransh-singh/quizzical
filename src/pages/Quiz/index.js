@@ -1,5 +1,4 @@
-import React from "react"
-import Question from "./components/Question"
+import Question from "./Question"
 
 
 // adding correct answer in random in option array
@@ -9,7 +8,7 @@ function Quiz(props){
     (q, index)=>{
       const {question, correct_answer, incorrect_answers} = q
       const option = [...incorrect_answers]
-      option.splice(Math.ceil(Math.random()*3), 0, correct_answer)
+      option.splice(Math.floor(Math.random()*4), 0, correct_answer)
       return(
       <Question
         key={index}
