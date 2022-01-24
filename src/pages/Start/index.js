@@ -1,14 +1,20 @@
-// button to change the state of isStarted and fetch the quiz quiestions
+import { useNavigate } from 'react-router-dom'
+import './style.css'
 
 function Start(props){
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    props.startGame()
+    navigate('/quiz')
+  }
 
   return(
-    <div>
-      <h1>Quizzical</h1>
-      <p>A trivial quiz app</p>
-      <button onClick={props.startGame}>start the quiz</button>
-
-    </div>
+    <main className="start-page">
+      <h1 className="start-page__heading">Quizzical</h1>
+      <p className="start-page__content">A trivial quiz app</p>
+      <button className="start-page__button" onClick={handleClick}>start the quiz</button>
+    </main>
   )
 }
 

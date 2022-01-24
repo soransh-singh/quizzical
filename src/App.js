@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import './css/master.css'
-import Start from './pages/Start'
-import Quiz from './pages/Quiz'
+import { Routes, Route } from 'react-router-dom';
+import './css/master.css';
+import Start from './pages/Start';
+import Quiz from './pages/Quiz';
 
 // Use state to save the quiz quetions
 // use effect to fetch the questions
@@ -26,6 +27,11 @@ function App() {
 
   return (
     <div>
+      <Routes>
+        <Route exact path="/" element={<Start startGame={()=> setIsStarted(true)}/>}></Route>
+        <Route path="/quiz" element={<Quiz stopGame={()=> setIsStarted(false)} questions={questions} />} ></Route>
+      </Routes>
+    {/*<div>
       {isStarted?
         <div>
           <Quiz
@@ -35,7 +41,8 @@ function App() {
         </div>:
         <div><Start startGame={()=> setIsStarted(true)}/> </div>
       }
-    </div>
+    </div>*/}
+  </div>
   );
 }
 

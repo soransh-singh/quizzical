@@ -1,3 +1,8 @@
+:root{
+  --clr-pr: 231 42% 28%;
+  --clr-sec: 220 43% 97%;
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -11,6 +16,7 @@ body{
 
 button,a{
   cursor: pointer;
+  color: inherit;
 }
 
 a{
