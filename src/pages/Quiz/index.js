@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Question from "./Question"
 
@@ -5,6 +6,12 @@ import Question from "./Question"
 // adding correct answer in random in option array
 function Quiz(props){
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    if(question.length === 0){
+      navigate('/')
+    }
+  })
 
   const handleBack = () => {
     props.stopGame()
@@ -24,13 +31,14 @@ function Quiz(props){
         option={option}
       />
     )})
-  return(
-    <div>quiz page
+
+    return(
+      <div>quiz page
       <button onClick={handleBack}>back button</button>
       {question}
       <button>Show Answer</button>
-    </div>
-  )
+      </div>
+    )
 }
 
 export default Quiz

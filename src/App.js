@@ -12,7 +12,6 @@ function App() {
   const [isStarted, setIsStarted] = useState(false)
   const [questions, setQuestions] = useState([])
 
-
   useEffect(()=>{
     if (isStarted){
       fetchQuestions()
@@ -29,7 +28,7 @@ function App() {
     <div>
       <Routes>
         <Route exact path="/" element={<Start startGame={()=> setIsStarted(true)}/>}></Route>
-        <Route path="/quiz" element={<Quiz stopGame={()=> setIsStarted(false)} questions={questions} />} ></Route>
+        <Route path="/quiz" element={<Quiz stopGame={()=> setIsStarted(false)} isStarted={isStarted} questions={questions} />} ></Route>
       </Routes>
     {/*<div>
       {isStarted?
