@@ -28,7 +28,14 @@ function App() {
     <div>
       <Routes>
         <Route exact path="/" element={<Start startGame={()=> setIsStarted(true)}/>}></Route>
-        <Route path="/quiz" element={<Quiz stopGame={()=> setIsStarted(false)} isStarted={isStarted} questions={questions} />} ></Route>
+        <Route
+          path="/quiz"
+          element={
+            isStarted?
+            <Quiz stopGame={()=> setIsStarted(false)} questions={questions} />:
+            <Start startGame={()=> setIsStarted(true)}/>
+          }
+        ></Route>
       </Routes>
     {/*<div>
       {isStarted?

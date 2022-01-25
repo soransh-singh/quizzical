@@ -12,7 +12,28 @@ body{
   min-height: 100vh;
   font-family: 'Karla', sans-serif;
   cursor: default;
+  color: hsl(var(--clr-pr, 0 0% 0%));
+  background-color: hsl(var(--clr-sec, 0 0% 100%));
+  position: relative;
 }
+
+
+body::before{
+  content: url('./blob-top.svg');
+  position: fixed;
+  z-index: -1;
+  top:0;
+  right: 0;
+}
+
+body::after{
+  content: url('./blob-bottom.svg');
+  position: fixed;
+  z-index: -1;
+  bottom:0;
+  left: 0;
+}
+
 
 button,a{
   cursor: pointer;
@@ -24,10 +45,35 @@ a{
 }
 
 ul{
-  list-style: none;
   padding: 0;
 }
 
 li{
+  list-style: none;
+}
 
+/* Utility Classes */
+
+.button{
+  font-size: 1rem;
+  font-weight: 700;
+  border: solid 2px hsl(var(--clr-pr, 0 0% 0%));
+  padding: .8em;
+  border-radius: .4em;
+  color: hsl(var(--clr-sec, 0 0% 100%));
+  background-color: hsl(var(--clr-pr, 0 0% 0%));
+  transition: all 0.3s linear;
+}
+
+.button:hover{
+  color: hsl(var(--clr-pr, 0 0% 0%));
+  background-color: hsl(var(--clr-sec, 0 0% 100%));
+}
+
+.button:focus{
+  outline: dashed 4px hsl(var(--clr-pr, 0 0% 0%));
+}
+
+.button:active{
+  transform: scale(0.95);
 }

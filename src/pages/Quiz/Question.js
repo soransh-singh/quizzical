@@ -7,13 +7,14 @@ function Question(props){
   }
 
   const option = props.option.map((opt, index)=>(
-    <div key={index} onClick={handleChange}>{opt}</div>
+    <li key={index}  className="question__option" onClick={handleChange}>{opt}</li>
   ))
   return(
-    <div>
-      <p>{props.ques}</p>
-      <p>{props.correct}</p>
-      {option}
+    <div className="question">
+      <p className="question__title">{props.ques}</p>
+      <div className="question__options">
+        {option}
+      </div>
     </div>
   )
 }

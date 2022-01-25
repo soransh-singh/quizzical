@@ -13,7 +13,7 @@ function Start(props){
     <main className="start-page">
       <h1 className="start-page__heading">Quizzical</h1>
       <p className="start-page__content">A trivial quiz app</p>
-      <button className="start-page__button" onClick={handleClick}>start the quiz</button>
+      <button className="button" onClick={handleClick}>start the quiz</button>
     </main>
   )
 }
