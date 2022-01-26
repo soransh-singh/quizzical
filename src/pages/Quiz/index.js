@@ -1,15 +1,23 @@
-import { useEffect } from 'react'
+import { useState,useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Question from "./Question"
 
 import './style.css'
 // adding correct answer in random in option array
 function Quiz(props){
-  const navigate = useNavigate();
+  const [ score, setScore ] = useState(0)
+  const [ isSubmited, setIsSubmited ] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleBack = () => {
     props.stopGame()
     navigate('/')
+  }
+
+  const checkAnswer = ()=>{
+    setIsSubmited(true)
+    console.log("checkinggg.... Answers");
   }
 
   const question = props.questions.map(
@@ -23,6 +31,8 @@ function Quiz(props){
         ques={question}
         correct={correct_answer}
         option={option}
+        updateScore={(val)=>setScore(prevScore => prevScore + val)}
+        isSubmited={isSubmited}
       />
     )})
 
@@ -31,7 +41,8 @@ function Quiz(props){
       <div className="quiz__questions">
       {question}
       </div>
-      <button className="quiz__button button">Check Answer</button>
+      <p>{isSubmited && score}</p>
+      <button className="quiz__button button" onClick={checkAnswer}>Check Answer</button>
       </main>
     )
 }
