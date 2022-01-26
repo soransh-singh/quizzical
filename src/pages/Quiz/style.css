@@ -31,18 +31,19 @@
   padding: 0.5rem 1rem;
   border: solid 2px hsl(var(--clr-pr, 0 0% 0%));
   border-radius: 1rem;
+  cursor: pointer;
 }
 
 .question__option--select{
-
+  background-color: hsl(230 61% 90%);
 }
 
 .question__option--correct{
-
+  background-color: hsl(133 46% 71%)
 }
 
 .question__option--incorrect{
-
+  background-color: hsl(360 81% 85%);
 }
 
 
