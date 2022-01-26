@@ -1,7 +1,7 @@
 # Quizzical
 
 Quizzical is a trivia quiz app. that fetches question from
-(open trivia database api)[https://opentdb.com/api_config.php](https://opentdb.com/api_config.php)
+[open trivia database api](https://opentdb.com/api_config.php)
 and display them.
 
 ## Introduction
